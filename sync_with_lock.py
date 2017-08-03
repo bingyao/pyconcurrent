@@ -38,10 +38,10 @@ if __name__ == '__main__':
     t2.start()
     t3.start()
     t4.start()
-    # t1.join()
-    # t2.join()
-    # t3.join()
-    # t4.join()
+    t1.join()
+    t2.join()
+    t3.join()
+    t4.join()
     # Without Join, the print funcs will execute first before t1 and t2
     # finished, so is SEEMS LIKE even with lock will fail.
     
