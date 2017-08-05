@@ -38,7 +38,7 @@ class Producer(Thread):
         self.event.clear()
 
     def run(self):
-        global items
+        # global items
         for i in range(10):
             print('Round {}.'.format(i))
             time.sleep(2)
