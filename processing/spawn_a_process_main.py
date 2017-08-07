@@ -17,7 +17,12 @@ def foo(i):
 
 if __name__ == '__main__':
     info('MAIN LINE.')
+    plist = []
     for i in range(5):
         p = multiprocessing.Process(target=foo, args=(i,))
+        plist.append(p)
         p.start()
-        p.join()
+        # p.join()
+
+    for i in range(5):
+        plist[i].join()
