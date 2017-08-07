@@ -14,7 +14,7 @@ logger.addHandler(ch)
 
 fibo_dict = {}
 shared_queue = Queue()
-input_list = [3, 10, 1024, 7]
+input_list = [3, 10, 5, 7]
 
 queue_condition = Condition()
 
