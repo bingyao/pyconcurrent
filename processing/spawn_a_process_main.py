@@ -11,9 +11,11 @@ def info(title):
 
 def foo(i):
     info('\nfunction FOO.')
-    name = multiprocessing.current_process().name
-    time.sleep(5)
-    print('The foo is called by process {} in loop {}'.format(name, i))
+    cp = multiprocessing.current_process()
+    name = cp.name
+    pid = cp.pid
+    time.sleep(3)
+    print('The foo is called by [{}] named {} in loop {}'.format(pid, name, i))
 
 if __name__ == '__main__':
     info('MAIN LINE.')
@@ -22,7 +24,9 @@ if __name__ == '__main__':
         p = multiprocessing.Process(target=foo, args=(i,))
         plist.append(p)
         p.start()
-        # p.join()
+        p.join()
 
-    for i in range(5):
-        plist[i].join()
+    # print()
+
+    # for i in range(5):
+    #     plist[i].join()
